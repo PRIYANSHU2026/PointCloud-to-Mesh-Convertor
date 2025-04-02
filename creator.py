@@ -20,6 +20,16 @@ def load_point_cloud(file_path):
     print(f"Loaded point cloud with {len(pcd.points)} points")
     return pcd
 
+def preprocess_point_cloud(pcd):
+    points = np.asarray(pcd.points)
+    center = points.mean(axis=0)
+    points -= center
+    scale = np.max(np.linalg.norm(points, axis=1))
+    points /= scale
+    pcd.points = o3d.utility.Vector3dVector(points)
+    pcd = pcd.voxel_down_sample(voxel_size=0.01)
+    print(f"Preprocessed to {len(pcd.points)} points")
+    return pcd
 
 def orient_normals(pcd):
     pcd.estimate_normals(search_param=o3d.geometry.KDTreeSearchParamHybrid(radius=0.1, max_nn=30))
@@ -28,7 +38,7 @@ def orient_normals(pcd):
     return pcd
 
 
-def poisson_reconstruction(pcd, depth=8):
+def poisson_reconstruction(pcd, depth=12):
     print("Running Poisson reconstruction with depth=", depth)
     mesh, densities = o3d.geometry.TriangleMesh.create_from_point_cloud_poisson(pcd, depth=depth)
     mesh.compute_vertex_normals()
@@ -38,7 +48,7 @@ def poisson_reconstruction(pcd, depth=8):
     return mesh
 
 
-def ball_pivoting_reconstruction(pcd, radii=[1.0, 2.0, 4.0, 8.0, 16.0]):
+def ball_pivoting_reconstruction(pcd, radii=[0.1, 0.2, 0.5, 1.0, 2.0, 4.0]):
     distances = pcd.compute_nearest_neighbor_distance()
     avg_dist = np.mean(distances)
     print(f"Average nearest neighbor distance: {avg_dist}")
