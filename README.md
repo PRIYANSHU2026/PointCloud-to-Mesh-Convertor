@@ -55,10 +55,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contributors
 
-- PRIYANSHU TIWARI - Project Lead & Algorithm Developer
-- N RAM SRUJAN RAJ - 3D Visualization Specialist
-- RISHABH RAJ - UI/UX Designer
-- ADITYA KUMAR - System App Devloper
+- Priyanshu Tiwari - Project Lead & Algorithm Developer
+- N Ram Srujan Raj - 3D Visualization Specialist
+- Rishabh Raj - UI/UX Designer
+- Aditya Kumar - System App Devloper
 
 ## Mentor
-- Dr S AMBAREESH (Profesor of AIML Dept at SIR M VISVEVARAYA INSTITUTE OF TECHNOLOGY)
+- Dr S Ambareesh (Professor, AI/ML Dept, Sir M Visvesvaraya Institute of Technology)
