@@ -55,6 +55,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contributors
 
-- John Doe - Project Lead & Algorithm Developer
-- Jane Smith - 3D Visualization Specialist
-- David Johnson - UI/UX Designer
+- PRIYANSHU TIWARI - Project Lead & Algorithm Developer
+- N RAM SRUJAN RAJ - 3D Visualization Specialist
+- RISHABH RAJ - UI/UX Designer
+- ADITYA KUMAR - System App Devloper
+
+## Mentor
+- Dr S AMBAREESH (Profesor of AIML Dept at SIR M VISVEVARAYA INSTITUTE OF TECHNOLOGY)
